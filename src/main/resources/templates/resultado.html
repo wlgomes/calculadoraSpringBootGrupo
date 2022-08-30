@@ -6,7 +6,9 @@
 </head>
 <body>
 <p> A soma de <span th:text="${a}"></span> + <span th:text="${b}"></span> é <span th:text="${c}"></span></p>
-<input type="button" value="Voltar">
+
+<!-- controlador voltar nao esta a ser usado -->
+<a th:href="@{/somar}">Voltar</a>
 
 </body>
 </html>

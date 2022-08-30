@@ -1,6 +1,7 @@
 package com.example.calculadoraspringbootgrupo.controllers;
 
 import com.example.calculadoraspringbootgrupo.model.OperationModel;
+import org.apache.coyote.http11.filters.SavedRequestInputFilter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ public class SomaController {
     public String getIndex(){
         return "calculadora.html";
     }
+
     @GetMapping("/resultado")
 
     public String calcula(Model model, @RequestParam(name = "a") int a, @RequestParam(name = "b") int b) {
@@ -21,5 +23,13 @@ public class SomaController {
         model.addAttribute("c",c);
         return "resultado.html";
     }
+
+    //controlador para o botao voltar, será necessário?
+    @GetMapping("/voltar")
+    public String voltar(){
+        return "redirect:/somar";
+    }
+
+
 
 }
